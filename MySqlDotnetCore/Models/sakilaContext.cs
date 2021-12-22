@@ -1136,7 +1136,7 @@ namespace MySqlDotnetCore.Models
                 entity.Property(e => e.Iddocumento).HasColumnName("iddocumento");
 
                 entity.Property(e => e.Archivo)
-                    .HasMaxLength(255)
+                    .HasMaxLength(60000)
                     .HasColumnName("archivo");
 
                 entity.Property(e => e.Nombredocumento)
