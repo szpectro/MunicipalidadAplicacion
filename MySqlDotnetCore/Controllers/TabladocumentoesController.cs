@@ -152,5 +152,44 @@ namespace MySqlDotnetCore.Controllers
         {
             return _context.Tabladocumentos.Any(e => e.Iddocumento == id);
         }
+
+        public async Task<IActionResult> CreateFile()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadToDatabase(List<IFormFile> files, string descripcion)
+        {
+            foreach (var file in files)
+            {
+                var fileName = Path.GetFileNameWithoutExtension(file.FileName);
+                var extension = Path.GetExtension(file.FileName);
+                var fileModel = new Tabladocumento
+                {
+
+                    Tipocontenido = extension,
+
+                    Nombredocumento = descripcion
+                };
+                using (var dataStream = new MemoryStream())
+                {
+                    await file.CopyToAsync(dataStream);
+                    fileModel.Archivo = dataStream.ToArray();
+                }
+                _context.Tabladocumentos.Add(fileModel);
+                _context.SaveChanges();
+            }
+            TempData["Message"] = "File successfully uploaded to Database";
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> VerDocumentos()
+        {
+            return View(await _context.Tabladocumentos.ToListAsync());
+        }
+
+
     }
 }
+

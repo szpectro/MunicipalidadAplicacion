@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "CreateFile";
+}
+
+<h1>CreateFile</h1>
+
+<div class="container">
+    <form class="container" method="post" enctype="multipart/form-data">
+        <input type="file" name="files" multiple required />
+        <input type="text" autocomplete="off" placeholder="tipo" name="extension" required />
+        <input type="text" autocomplete="off" placeholder="Descripcion" name="descripcion" required />
+        <button type="submit" class="btn btn-primary" asp-controller="File" asp-action="UploadToFileSystem">Upload to File System</button>
+        <button class="btn btn-success" type="submit" asp-controller="TablaDocumentoes" asp-action="UploadToDatabase">Upload to Database</button>
+    </form>
+</div>
