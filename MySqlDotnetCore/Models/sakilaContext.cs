@@ -211,6 +211,9 @@ namespace MySqlDotnetCore.Models
 
             modelBuilder.Entity<Aspnetuser>(entity =>
             {
+                entity.HasKey(e => e.Id)
+                    .HasName("PRIMARY");
+
                 entity.ToTable("aspnetusers");
 
                 entity.HasIndex(e => e.NormalizedEmail, "EmailIndex");
