@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewData["Title"] = "Sugerencias";
+}
+
+<h1>Sugerencias</h1>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+    Ingresar una sugerencia
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">Ingreso de sugerencia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Nombre</label>
+                            <input type="password" class="form-control" id="inputPassword4" placeholder="Ingrese su nombre">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Direccion</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="#1234 Av. Los Robles">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress2">Direccion 2</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="Ingrese una direccion secundaria">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">Comuna</label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">Region</label>
+                            <select id="inputState" class="form-control">
+                                <option selected>Los Lagos</option>
+                                <option>Los Rios</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Codigo postal</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Escriba su sugerencia aquí</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Enviar Sugerencia</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Guardar borrador</button>
+            </div>
+        </div>
+    </div>
+</div>
